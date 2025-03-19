@@ -28,8 +28,6 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/your-username/weather-website.git
-
 Navigate to the project directory:
 
 cd weather-website
