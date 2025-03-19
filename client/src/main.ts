@@ -37,13 +37,12 @@ API Calls
 // Example fetch request in main.ts
 async function fetchWeather(city: string) {
   try {
-    const apiKey = 'c3a1336ae4e85d0ecd03b5c945615699'; // Hard-coded API key
     const response = await fetch(`http://localhost:3000/api/weather`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ city, apiKey }), // Send the API key in the request body
+      body: JSON.stringify({ city }), // Only send the city name
     });
 
     const weatherData = await response.json();

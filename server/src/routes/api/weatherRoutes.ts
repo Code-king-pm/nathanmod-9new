@@ -1,8 +1,8 @@
-import { Router } from 'express';
+import express from 'express';
 import WeatherService from '../../service/weatherService.js';
 import HistoryService from '../../service/historyService.js';
 
-const router = Router();
+const router = express.Router();
 
 // POST Request with city name to retrieve weather data
 router.post('/', async (req, res) => {
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'City name is required' });
     }
 
-    // Use the provided API key (hard-coded for testing)
+    // Use the API key from environment variables
     const weatherData = await WeatherService.getWeatherForCity(city);
 
     await HistoryService.addCity(city);
